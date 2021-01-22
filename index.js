@@ -12,7 +12,7 @@ app.get("/docs/openapi.yaml", (_req, res) =>
   res.sendFile(path.join(__dirname, "openapi.yaml"))
 );
 
-app.get("/docs/rapidoc", (_req, res) => {
+app.get("", (_req, res) => {
   res.send(`
         <!doctype html>
             <head>
@@ -31,7 +31,7 @@ app.get("/docs/rapidoc", (_req, res) => {
     `);
 });
 
-app.get("*", (req, res) => {
+app.get("/my-route", (req, res) => {
   console.log(req.headers.accept);
   res.send(`Received Accept header: '${req.headers.accept}'`);
 });
