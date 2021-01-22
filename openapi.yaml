@@ -1,0 +1,27 @@
+
+openapi: 3.0.0
+
+info:
+  version: "1"
+  title: "My API"
+
+paths:
+  /my-route:
+    get:
+      operationId: routeOne
+      responses:
+        200:
+          description: Success
+          content:
+            image/png:
+              schema:
+                type: string
+                format: binary
+            application/json:
+              schema:
+                type: object
+                properties:
+                  prop1:
+                    type: number
+                  prop2:
+                    type: string
